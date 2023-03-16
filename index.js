@@ -13,18 +13,18 @@ async function main() {
     await mongoose.connect('mongodb://127.0.0.1:27017/houses');
     console.log("connected")
     let lots = await Lot.findOne({title:"lot 1"})
-    let ltitle = JSON.stringify(lots.title)
+    let ltitle = JSON.stringify(lots)
     let lotTitle = lots.title
-    console.log(lots)
-    console.log(ltitle)
-    console.log(lots.title)
-    return lots.title
+    return ltitle
+    // return lots.title
 }
+
 let lots
+main().then(ltitle => lots=ltitle);
 
 
 
-bot.start((ctx) => ctx.reply(`Hello ${ctx.from.first_name}, choose the appropriate option ${ltitle}` ))
+bot.start((ctx) => ctx.reply(`Hello ${ctx.from.first_name}, choose the appropriate option ${lots}` ))
 bot.help((ctx) => ctx.reply(text.commands))
 
 // bot.use(async (ctx) => {
