@@ -1,6 +1,7 @@
 const commands = `
-/start -
-/help -
+/start - Перезапустить бота
+/help - Помощь
+/orders - Занятые даты 
 `
 
 
